@@ -5,7 +5,7 @@ class ColorViewController < UIViewController
   end
   
   def randomColor
-    ['darkGrayColor', 'lightGrayColor', 'whiteColor', 'grayColor', 'redColor', 'greenColor', 'blueColor', 'cyanColor', 'yellowColor', 'magentaColor', 'orangeColor', 'purpleColor', 'brownColor'].sample
+    ['redColor', 'pinkColor', 'blueColor', 'yellowColor', 'purpleColor', 'greenColor', 'orangeColor', 'fuchsiaColor', 'brownColor', 'grayColor'].shuffle.first
   end
   
   def viewDidLoad
@@ -18,12 +18,13 @@ class ColorViewController < UIViewController
   
   def setColor
     color = randomColor
+    colorText = color == 'yellowColor' ? 'blackColor' : 'whiteColor'
     view.backgroundColor = UIColor.send(color)
     @label.backgroundColor = UIColor.clearColor
     @label.text = color.gsub('Color', '').upcase
     @label.font = UIFont.boldSystemFontOfSize(50)
-    @label.textColor = UIColor.blackColor
+    @label.textColor = UIColor.send(colorText)
     @label.textAlignment = UITextAlignmentCenter
   end
-    
+      
 end
