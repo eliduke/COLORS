@@ -1,7 +1,7 @@
 class UIColor
   
   def self.pinkColor
-    @pink_color ||= self.colorWithRed(98, green:0.68, blue:0.82, alpha:1)
+    @pink_color ||= self.colorWithRed(0.98, green:0.68, blue:0.82, alpha:1)
   end
   
   def self.fuchsiaColor
@@ -17,7 +17,11 @@ class UIColor
   end
   
   def self.blueColor
-    @blue_color ||= self.colorWithRed(0, green:0.44, blue:100, alpha:1)
+    @blue_color ||= self.colorWithRed(0, green:0.44, blue:1, alpha:1)
+  end
+  
+  def self.tealColor
+    @teal_color ||= self.colorWithRed(0, green:0.5, blue:0.5, alpha:1)
   end
   
 end
